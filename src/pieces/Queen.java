@@ -2,25 +2,24 @@ package pieces;
 
 import java.util.List;
 import java.util.ArrayList;
-import moves.MoveRule;
+import board.Move;
 
 public class Queen extends Piece {
 
-    // Constructor
     public Queen(int color) {
-        super(false, false, color);
+        super(color);
 
         // Setting capturing moves directions
         // directions: left, right, up, down, diagonals;
-        List<MoveRule> moves = new ArrayList<>(List.of(
-                new MoveRule(-1, 1, 8),
-                new MoveRule(1, 1, 8),
-                new MoveRule(-1, -1, 8),
-                new MoveRule(1, -1, 8),
-                new MoveRule(1,0,8),
-                new MoveRule(-1, 0, 8),
-                new MoveRule(0, 1, 8),
-                new MoveRule(0, -1, 8)
+        List<Move> moves = new ArrayList<>(List.of(
+                new Move(-1, 1, 8),
+                new Move(1, 1, 8),
+                new Move(-1, -1, 8),
+                new Move(1, -1, 8),
+                new Move(1,0,8),
+                new Move(-1, 0, 8),
+                new Move(0, 1, 8),
+                new Move(0, -1, 8)
         ));
         setMovesCapture(moves);
         setMoves(moves);

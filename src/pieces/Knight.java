@@ -2,24 +2,23 @@ package pieces;
 
 import java.util.List;
 import java.util.ArrayList;
-import moves.MoveRule;
+import board.Move;
 
 public class Knight extends Piece {
 
-    // Constructor
     public Knight(int color) {
-        super(true, false, color);
+        super(color);
 
         // Setting capturing moves directions
-        List<MoveRule> moves = new ArrayList<>(List.of(
-                new MoveRule(-1, 2, 1),
-                new MoveRule(-1, -2, 1),
-                new MoveRule(1, 2, 1),
-                new MoveRule(1, -2, 1),
-                new MoveRule(-2, 1, 1),
-                new MoveRule(-2, -1, 1),
-                new MoveRule(2, 1, 1),
-                new MoveRule(2, -1, 1)
+        List<Move> moves = new ArrayList<>(List.of(
+                new Move(-1, 2, 1),
+                new Move(-1, -2, 1),
+                new Move(1, 2, 1),
+                new Move(1, -2, 1),
+                new Move(-2, 1, 1),
+                new Move(-2, -1, 1),
+                new Move(2, 1, 1),
+                new Move(2, -1, 1)
         ));
 
         setMovesCapture(moves);
