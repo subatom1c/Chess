@@ -9,6 +9,7 @@ import java.util.Map;
 public class Board {
 
     private final Piece[][] chessBoard = new Piece[8][8];
+    public boolean deformed = false;
 
     public Board() {
         // rooks
@@ -270,7 +271,7 @@ public class Board {
             for (int col = 0; col < 8; col++) {
                 System.out.print(getPiece(new Square(col, row)));
                 if (!(getPiece(new Square(col, row)) instanceof EmptyPiece)) {
-                    if (col % 3 == 0) {
+                    if (col % 3 == 0 && !deformed) {
                         System.out.print("\u2006");
                     }
                 }
@@ -279,6 +280,10 @@ public class Board {
         }
         System.out.print("  ");
         for (int letter = 97; letter <= 104; letter++) {
+            if (deformed) {
+                System.out.print((char)letter + " ");
+                continue;
+            }
             System.out.print("\u2008" + (char)letter + "\u2008");
         }
         System.out.println();
@@ -465,5 +470,15 @@ public class Board {
         Map<Square, Square> stopsCheck = stopsCheck(defendingColor);
         return stopsCheck.keySet().isEmpty();
     }
+
+    public void format() {
+        this.deformed = true;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                chessBoard[i][j].isDeformed();
+            }
+        }
+    }
+
 
 }

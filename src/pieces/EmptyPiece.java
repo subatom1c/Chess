@@ -6,6 +6,9 @@ public class EmptyPiece extends Piece {
     }
     @Override
     public String toString() {
+        if (deformed) {
+            return "- ";
+        }
         return "\u2008-\u2008";
     }
 }

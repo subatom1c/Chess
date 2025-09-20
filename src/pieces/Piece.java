@@ -13,6 +13,8 @@ public abstract class Piece {
     protected List<Move> moves = new ArrayList<>();
     protected boolean hasMoved = false;
     protected int color; // -1 color simbolizes emptiness
+    protected boolean deformed = false;
+    public static final String BRIGHT_BLACK = "\u001B"; // better visibility
 
     public Piece(int color){this.color = color;}
 
@@ -68,6 +70,8 @@ public abstract class Piece {
     public void setColor(int color) {
         this.color = color;
     }
+
+    public void isDeformed(){this.deformed = true;}
 
     @Override
     public String toString() {

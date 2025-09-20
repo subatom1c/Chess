@@ -16,7 +16,7 @@ public class Queen extends Piece {
                 new Move(1, 1, 8),
                 new Move(-1, -1, 8),
                 new Move(1, -1, 8),
-                new Move(1,0,8),
+                new Move(1, 0, 8),
                 new Move(-1, 0, 8),
                 new Move(0, 1, 8),
                 new Move(0, -1, 8)
@@ -28,8 +28,14 @@ public class Queen extends Piece {
     @Override
     public String toString() {
         if (color == BLACK) {
+            if (deformed) {
+                return "\u001B[90mQ\u001B[0m ";
+            }
             return "\u2655"; // unicode for white queen
         } else if (color == WHITE) {
+            if (deformed) {
+                return "Q ";
+            }
             return "\u265B";
         }
         return "";

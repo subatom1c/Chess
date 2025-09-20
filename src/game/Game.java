@@ -13,6 +13,7 @@ public class Game {
     private final Board board;
     private final String whiteName;
     private final String blackName;
+    private static boolean deformed = false;
 
     public Game(String whiteName, String blackName) {
         this.whiteName = whiteName;
@@ -23,9 +24,16 @@ public class Game {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        
+
         System.out.print("White player's name: ");
         String whiteName = scanner.nextLine();
+
+        if (whiteName.equals("changemyformat")) {
+            deformed = true;
+            System.out.print("White player's name: ");
+            whiteName = scanner.nextLine();
+        }
+
 
         System.out.print("Black player's name: ");
         String blackName = scanner.nextLine();
@@ -40,6 +48,10 @@ public class Game {
         Player whitePlayer = new Player(Piece.WHITE, this.whiteName);
         Player blackPlayer = new Player(Piece.BLACK, this.blackName);
         Scanner scanner = new Scanner(System.in);
+
+        if (deformed) {
+            board.format();
+        }
 
         int moveCounter = 0;
 
@@ -146,4 +158,5 @@ public class Game {
         }
 
     }
+
 }

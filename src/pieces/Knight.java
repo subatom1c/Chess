@@ -28,8 +28,14 @@ public class Knight extends Piece {
     @Override
     public String toString() {
         if (color == BLACK) {
+            if (deformed) {
+                return "\u001B[90mH\u001B[0m ";
+            }
             return "\u2658"; // unicode for white knight
         } else if (color == WHITE) {
+            if (deformed) {
+                return "H ";
+            }
             return "\u265E";
         }
         return "";

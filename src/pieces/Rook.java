@@ -25,8 +25,14 @@ public class Rook extends Piece {
     @Override
     public String toString() {
         if (color == BLACK) {
+            if (deformed) {
+                return "\u001B[90mR\u001B[0m ";
+            }
             return "\u2656"; // unicode for white bishop
         } else if (color == WHITE) {
+            if (deformed) {
+                return "R ";
+            }
             return "\u265C";
         }
         return "";

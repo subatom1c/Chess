@@ -24,8 +24,14 @@ public class Bishop extends Piece {
     @Override
     public String toString() {
         if (color == BLACK) {
+            if (deformed) {
+                return "\u001B[90mB\u001B[0m ";
+            }
             return "\u2657"; // unicode for white bishop
         } else if (color == WHITE) {
+            if (deformed) {
+                return "B ";
+            }
             return "\u265D";
         }
         return "";

@@ -28,8 +28,14 @@ public class King extends Piece {
     @Override
     public String toString() {
         if (color == BLACK) {
+            if (deformed) {
+                return "\u001B[90mK\u001B[0m ";
+            }
             return "\u2654"; // unicode for white king
         } else if (color == WHITE) {
+            if (deformed) {
+                return "K ";
+            }
             return "\u265A";
         }
         return "";

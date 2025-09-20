@@ -49,8 +49,14 @@ public class Pawn extends Piece {
     @Override
     public String toString() {
         if (color == BLACK) {
+            if (deformed) {
+                return "\u001B[90mP\u001B[0m ";
+            }
             return "\u2659"; // unicode for white pawn
         } else if (color == WHITE) {
+            if (deformed) {
+                return "P ";
+            }
             return "\u265F";
         }
         return "";
