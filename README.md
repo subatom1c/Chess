@@ -1,5 +1,7 @@
 # Chess
-Terminal chess.
-find src -name "*.java" > sources.txt
-javac -d out @sources.txt
+Terminal chess implemented in java!
+
+To run (be in src):
+javac -d out $(find src -name "*.java")
 java -cp out game.Game
+
